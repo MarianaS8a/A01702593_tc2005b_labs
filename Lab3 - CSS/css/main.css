@@ -1,11 +1,10 @@
-
-
 body{
     font-family: Arial, Helvetica, sans-serif;
+    line-height: 200%;
 }
 
 header{
-    height: 8em;
+    height: 80%;
     display: flex;
     align-items: center;
     color: white;
@@ -15,14 +14,24 @@ header{
 }
 
 main{
-    background-color: #C62E47;
+    /*background-color:#C62E47;*/
     margin: 1.5%;
-    padding-left: 5%;
+    padding-left: 10%;
     padding-top: 2%;
-    padding-right: 5%;
-    color: white;
+    padding-right: 10%;
+    color: grey;
+}
+
+footer{
+    color: grey;
+    padding-left: 12%;
+
 }
 
 img{
     width: 50%;
+}
+
+h2{
+    color: #642F67;
 }
