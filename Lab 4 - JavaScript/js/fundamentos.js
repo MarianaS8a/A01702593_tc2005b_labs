@@ -88,6 +88,21 @@ function average(matrix){
     }
 }
 
+//5. Función: inverso. Parámetros: Un número. 
+//Regresa: El número con sus dígitos en orden inverso.
+
+function reverse(number){
+    let temp;
+    while (number > 10){
+        temp = number%10;
+        document.write(number%10);
+        number = number - temp;
+        number = number/10;
+    }
+
+    document.write(number);
+}
+
 
 
 
@@ -105,3 +120,6 @@ counter(array);
 
 const matrix = [[0,4,7,1], [2,5,3], [9]];
 average(matrix);
+
+let number = 4837;
+reverse(number);
