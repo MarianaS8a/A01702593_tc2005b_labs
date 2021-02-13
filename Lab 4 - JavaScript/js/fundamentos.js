@@ -32,19 +32,47 @@ function random_sum(){
     const num1 = Math.floor(Math.random()*100);
     const num2 = Math.floor(Math.random()*100);
 
+    const initial_time = new Date().getTime();
     const result = prompt("¿Cuánto es " + num1 + " + " + num2);
+    const final_time = new Date().getTime();
 
     const answer = num1 + num2;
+    time = final_time - initial_time;
 
     if (result == answer){
-        document.write("La respuesta es correcta");
+        document.write("La respuesta es correcta ");
     }
     else{
-        document.write("La respuesta es incorrecta");
+        document.write("La respuesta es incorrecta ");
     }
+
+    document.write(time/1000 + "segundos");
 }
 
+//3. Función: contador. Parámetros: Un arreglo de números. 
+//Regresa: La cantidad de números negativos en el arreglo, la cantidad de 0's, y la cantidad de valores mayores a 0 en el arreglo.
 
+function counter(array){
+    let zeros = 0;
+    let positives = 0;
+    let negatives = 0;
+    for(let i = 0; i <= array.length; i++){
+        if (array[i] == 0){
+            zeros++;
+        }
+        else if(array[i] > 0){
+            positives++;
+        }
+        else if(array[i] < 0){
+            negatives++;
+        }
+    }
+
+    document.write("<p> Cantidad de 0's: " + zeros + "</p>");
+    document.write("<p> Cantidad de valores mayores a cero: " + positives + "</p>");
+    document.write("<p> Cantidad de valores menores a cero: " + negatives + "</p>");
+
+}
 
 
 
@@ -57,3 +85,7 @@ cuadrado_cubo(num);
 document.write("<br>");
 
 random_sum();
+
+const array = [0, 4, 2, -1, -5, -7];
+
+counter(array);
