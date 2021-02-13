@@ -103,7 +103,34 @@ function reverse(number){
     document.write(number);
 }
 
+/*6.Crea una solución para un problema de tu elección (puede ser algo relacionado con tus intereses, alguna problemática que 
+hayas identificado en algún ámbito, un problema de programación que hayas resuelto en otro lenguaje, un problema de la ACM,
+ entre otros). El problema debe estar descrito en un documento HTML, y la solución implementada en JavaScript, utilizando al menos
+la creación de un objeto, el objeto además de su constructor deben tener al menos 2 métodos. Muestra los resultados en el documento
+HTML.*/
 
+class Courses{
+
+    constructor(name, duration, days, grades){
+        this.name = name;
+        this.duration = duration;
+        this.days = days;
+        this.grades = grades;
+    }
+
+    calc_average(){
+        let average = 0;
+        for(let i = 0; i<this.grades.length; i++){
+            average = average + this.grades[i];
+        }
+        document.write(average/this.grades.length);
+    }
+
+    weekly_hours(){
+        document.write(this.days*this.duration);
+    }
+
+};
 
 
 //CASOS DE PRUEBA
@@ -123,3 +150,13 @@ average(matrix);
 
 let number = 4837;
 reverse(number);
+
+const math = new Courses("Mate", 2, 2, [86,67,100,100]);
+
+math.calc_average();
+math.weekly_hours();
+
+const english = new Courses("Ingles", 4, 2, [99, 89, 100, 90]);
+
+english.calc_average();
+english.weekly_hours();
