@@ -74,6 +74,19 @@ function counter(array){
 
 }
 
+// 4. Función: promedios. Parámetros: Un arreglo de arreglos de números. 
+//Regresa: Un arreglo con los promedios de cada uno de los renglones de la matriz.
+
+function average(matrix){
+    for(let i = 0; i<= matrix.length-1; i++){
+        let average = 0;
+        for(let j = 0; j<= matrix[i].length-1; j++){
+            average = average + matrix[i][j];
+        }
+
+        document.write(average/matrix[i].length + "<br>");
+    }
+}
 
 
 
@@ -89,3 +102,6 @@ random_sum();
 const array = [0, 4, 2, -1, -5, -7];
 
 counter(array);
+
+const matrix = [[0,4,7,1], [2,5,3], [9]];
+average(matrix);
