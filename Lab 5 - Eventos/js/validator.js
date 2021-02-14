@@ -32,8 +32,8 @@ password.onkeyup = () => {
         validation.innerHTML += "<li> Incluye al menos 8 caracteres";
     }
 
-    else if(password_value.match(lower_case) && password_value.match(upper_case)){
-        validation.innerHTML = "";
+    else if(password_value.match(lower_case) && password_value.match(upper_case) && password_value.length >= 8){
+        validation.innerHTML = "Contraseña segura";
     }
 
     if(password_value != password2_value){
