@@ -17,15 +17,19 @@ password.onkeyup = () => {
     validation.innerHTML = "";
 
     if(!password_value.match(upper_case)){
-        validation.innerHTML += "<li> Incluye una mayúscula </li>";
+        validation.innerHTML += "<li> Incluye al menos una mayúscula </li>";
     }
 
     if(!password_value.match(lower_case)){
-        validation.innerHTML += "<li> Incluye una minúscula </li>";
+        validation.innerHTML += "<li> Incluye al menos una minúscula </li>";
     }
 
     if(!password_value.match(numbers)){
-        validation.innerHTML += "<li> Incluye un número </li>";
+        validation.innerHTML += "<li> Incluye al menos un número </li>";
+    }
+
+    if(password_value.length < 8){
+        validation.innerHTML += "<li> Incluye al menos 8 caracteres";
     }
 
     else if(password_value.match(lower_case) && password_value.match(upper_case)){
