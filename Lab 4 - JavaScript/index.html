@@ -4,9 +4,106 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="css/main.css">
+
 </head>
 <body>
+    <header>
+        <h1>Resultados</h1>
+        <br>
+    </header>
     <script src = "js/fundamentos.js"></script>
+    <script id = "casos_prueba">
+        //Casos de prueba
+        //Pregunta 3: contador
+        console.assert(counter([2,2,0,-1,-2,-3,-5])[0] == 1 && 
+                      counter([2,2,0,-1,-2,-3,-5])[1] == 2 && 
+                      counter([2,2,0,-1,-2,-3,-5])[2] == 4);
+        console.assert(counter([4,0,0])[0] == 2 && 
+                      counter([4,0,0])[1] == 1 && 
+                      counter([4,0,0])[2] == 0);
+        console.assert(counter([])[0] == 0 && 
+                      counter([])[1] == 0 && 
+                      counter([])[2] == 0);
+        console.assert(counter([-1,10,0,367,-19,0])[0] == 2 && 
+                      counter([-1,10,0,367,-19,0])[1] == 2 && 
+                      counter([-1,10,0,367,-19,0])[2] == 2);
+        console.assert(counter([2,4,6,-1111])[0] == 0 && 
+                      counter([2,4,6,-1111])[1] == 3 && 
+                      counter([2,4,6,-1111])[2] == 1);
+
+        //Pregunta 4: promedios
+        console.assert(average([[0,4,7,1], [2,5,3], [9]])[0] == 3 && 
+                      average([[0,4,7,1], [2,5,3], [9]])[1] == 3.3333333333333335 && 
+                      average([[0,4,7,1], [2,5,3], [9]])[2] == 9);
+        console.assert(average([[2,4], [8, 7]])[0] == 3 && 
+                      average([[2,4], [8, 7]])[1] == 7.5);
+        console.assert(average([[4,3]])[0] == 3.5);
+        console.assert(average([[8], [2], [7]])[0] == 8 && 
+                      average([[8], [2], [7]])[1] == 2 && 
+                      average([[8], [2], [7]])[2] == 7);
+        console.assert(average([[8,4], [2,3], [7,8]])[0] == 6 && 
+                      average([[8,4], [2,3], [7,8]])[1] == 2.5 && 
+                      average([[8,4], [2,3], [7,8]])[2] == 7.5);
+        
+        //Pregunta 5: inverso
+        console.assert(reverse(431) == 134);
+        console.assert(reverse(54) == 45);
+        console.assert(reverse(0) == 0);
+        console.assert(reverse(5) == 5);
+        console.assert(reverse(274937) == 739472);
+
+        //Pregunta 6: Solución a problema
+        const math = new Courses("Mate", 2, 2, [86,67,100,100]);
+
+        console.assert(math.calc_average() == 88.25);
+        console.assert(math.weekly_hours() == 4);
+
+        const english = new Courses("Ingles", 4, 2, [99, 89, 100, 90]);
+        console.assert(english.calc_average() == 94.5);
+        console.assert(english.weekly_hours() == 8);
+    </script>
+    <main>
+        <h2>Preguntas</h2>
+        <h4>¿Qué diferencias y semejanzas hay entre Java y JavaScript?</h4>
+        <p>Semejanzas</p>
+        <ul>
+            <li>Tienen una sintaxis parecida</li>
+            <li>Comparten nombres de clases como Math o Date</li>
+        </ul>
+        <p>Diferencias</p>
+        <ul>
+            <li>JavaScript es un lenguaje interpretado mientras que Java es compilado</li>
+            <li>JavaScript es débilmente tipado y Java es fuertemente tipado</li>
+            <li>Java es recomendado para back-end y JavaScript para front-end</li>
+            <li>Java usualmente utiliza más recursos</li>
+        </ul>
+        <h4>¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)</h4>
+        <ol>
+            <li>now(): regresa fecha actual</li>
+            <li>getDate(): regresa el día del mes</li>
+            <li>getFullYear(): regresa el año actual</li>
+            <li>getMonth(): regresa el mes actual</li>
+            <li>getHours(): regresa la hora actual</li>
+        </ol>
+        <h4>¿Qué métodos tienen los arreglos? (Menciona al menos 5*)</h4>
+        <ol>
+            <li>push(): para insertar elemento</li>
+            <li>length(): regresa la longitud del arreglo</li>
+            <li>join(): regresa un string con todos los elementos</li>
+            <li>indexOf(): regresa el indice del elemento buscado</li>
+            <li>slice(): regresa una copia de todo o parte de un arreglos?</li>
+        </ol>
+        <h4>¿Cómo se declara una variable con alcance local dentro de una función?</h4>
+        <p>Las variables locales de una función deben de declararse dentro de la función
+            ya sea con var, let o const.
+        </p>
+        <h4>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</h4>
+        <p>Usar variables locales dentro de una función implica que solo van a poder ser usadas
+            dentro de esta función aunque sean globales.
+        </p>
+    </main>
+    
 </body>
 </html>

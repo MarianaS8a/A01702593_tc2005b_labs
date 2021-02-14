@@ -1,0 +1,18 @@
+h1{
+    text-align: center;
+}
+
+img{
+    width: 20%;
+    display: block;
+    margin: 5%;
+}
+
+section{
+    padding-left: 40%;
+    background-color: burlywood;
+}
+
+section h3{
+    margin-top: 5%;
+}

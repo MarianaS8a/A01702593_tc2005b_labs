@@ -1,0 +1,17 @@
+body{
+    text-align: center;
+}
+
+h1, h2{
+    color: coral;
+}
+
+h4{
+    color: darkgray;
+    text-align: center;
+}
+
+table{
+    margin: auto;
+    color: darkgray;
+}

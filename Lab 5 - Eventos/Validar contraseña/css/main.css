@@ -1,0 +1,29 @@
+body{
+    color: darkgray;
+}
+
+h1{
+    text-align: center;
+    color: coral;
+}
+
+input{
+    margin-left: 45%;
+}
+
+#instructions{
+    text-align: center;
+}
+
+#validator{
+    color: coral;
+}
+
+div{
+    text-align: center;
+}
+
+ul{
+    text-align: left;
+    display: inline-block;
+}

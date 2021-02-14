@@ -3,8 +3,10 @@
 //1. Entrada: un número pedido con un prompt. 
 //Salida: Una tabla con los números del 1 al número dado con sus cuadrados y cubos.
 //Utiliza document.write para producir la salida
+const num = prompt("Escribe un número entero");
 
-function cuadrado_cubo(num){
+document.write("<h2>Cuadrados y cubos</h2>");
+
 //Tabla
 document.write("<table>");
 
@@ -23,31 +25,33 @@ for(let i = 0; i<= num; i++){
 }
 document.write("</table>");
 
-}
 
 //2. Entrada: Usando un prompt se pide el resultado de la suma de 2 números generados de manera aleatoria. 
 //Salida: La página debe indicar si el resultado fue correcto o incorrecto, y el tiempo que tardó el usuario en escribir la respuesta.
 
-function random_sum(){
-    const num1 = Math.floor(Math.random()*100);
-    const num2 = Math.floor(Math.random()*100);
+const num1 = Math.floor(Math.random()*100);
+const num2 = Math.floor(Math.random()*100);
 
-    const initial_time = new Date().getTime();
-    const result = prompt("¿Cuánto es " + num1 + " + " + num2);
-    const final_time = new Date().getTime();
+const initial_time = new Date().getTime();
+const result = prompt("¿Cuánto es " + num1 + " + " + num2);
+const final_time = new Date().getTime();
 
-    const answer = num1 + num2;
-    time = final_time - initial_time;
+const answer = num1 + num2;
+time = final_time - initial_time;
 
-    if (result == answer){
-        document.write("La respuesta es correcta ");
-    }
-    else{
-        document.write("La respuesta es incorrecta ");
-    }
+document.write("<br>");
+document.write("<h2>Suma</h2>");
 
-    document.write(time/1000 + "segundos");
+if (result == answer){
+    document.write("<h4>La respuesta es correcta</h4> ");
 }
+else{
+    document.write("<h4>" + num1 + " + " + num2 + " no es " + result + "</h4>");
+    document.write("<h4> La respuesta correcta es: " + answer + "</h4>");
+}
+
+document.write("<h4> Tardaste: " + time/1000 + " segundos </h4>");
+
 
 //3. Función: contador. Parámetros: Un arreglo de números. 
 //Regresa: La cantidad de números negativos en el arreglo, la cantidad de 0's, y la cantidad de valores mayores a 0 en el arreglo.
@@ -67,40 +71,44 @@ function counter(array){
             negatives++;
         }
     }
-
-    document.write("<p> Cantidad de 0's: " + zeros + "</p>");
-    document.write("<p> Cantidad de valores mayores a cero: " + positives + "</p>");
-    document.write("<p> Cantidad de valores menores a cero: " + negatives + "</p>");
-
+    return([zeros, positives, negatives]);
 }
 
 // 4. Función: promedios. Parámetros: Un arreglo de arreglos de números. 
 //Regresa: Un arreglo con los promedios de cada uno de los renglones de la matriz.
 
 function average(matrix){
+    const result = [];
     for(let i = 0; i<= matrix.length-1; i++){
         let average = 0;
         for(let j = 0; j<= matrix[i].length-1; j++){
             average = average + matrix[i][j];
         }
 
-        document.write(average/matrix[i].length + "<br>");
+        result.push(average/matrix[i].length);
     }
+
+    return(result);
 }
 
 //5. Función: inverso. Parámetros: Un número. 
 //Regresa: El número con sus dígitos en orden inverso.
 
 function reverse(number){
-    let temp;
-    while (number > 10){
+    let result = 0;;
+    let temp = 0;
+    while (number >= 10){
         temp = number%10;
-        document.write(number%10);
+        result *= 10;
+        result += temp;
         number = number - temp;
         number = number/10;
     }
 
-    document.write(number);
+    result *= 10;
+    result+=number;
+
+    return(result);
 }
 
 /*6.Crea una solución para un problema de tu elección (puede ser algo relacionado con tus intereses, alguna problemática que 
@@ -109,54 +117,30 @@ hayas identificado en algún ámbito, un problema de programación que hayas res
 la creación de un objeto, el objeto además de su constructor deben tener al menos 2 métodos. Muestra los resultados en el documento
 HTML.*/
 
+//La clase representa cada uno de los cursos que toma un alumno
+//Las funciones de la clase pueden calcular la calificación del alumno en cada clase y el total de horas semanales que la toma
+
 class Courses{
 
     constructor(name, duration, days, grades){
-        this.name = name;
-        this.duration = duration;
-        this.days = days;
-        this.grades = grades;
+        this.name = name; //Nombre del curso
+        this.duration = duration; //Tiempo que dura cada sesión
+        this.days = days; //Número de días que se toma a la semana
+        this.grades = grades; //Calificaciones de las actividades
     }
 
+    //Promedio del alumno en cada clase
     calc_average(){
         let average = 0;
         for(let i = 0; i<this.grades.length; i++){
             average = average + this.grades[i];
         }
-        document.write(average/this.grades.length);
+        return(average/this.grades.length);
     }
 
+    //Horas de clase a la semana
     weekly_hours(){
-        document.write(this.days*this.duration);
+        return(this.days*this.duration);
     }
 
 };
-
-
-//CASOS DE PRUEBA
-const num = prompt("Escribe un número entero");
-cuadrado_cubo(num);
-
-document.write("<br>");
-
-random_sum();
-
-const array = [0, 4, 2, -1, -5, -7];
-
-counter(array);
-
-const matrix = [[0,4,7,1], [2,5,3], [9]];
-average(matrix);
-
-let number = 4837;
-reverse(number);
-
-const math = new Courses("Mate", 2, 2, [86,67,100,100]);
-
-math.calc_average();
-math.weekly_hours();
-
-const english = new Courses("Ingles", 4, 2, [99, 89, 100, 90]);
-
-english.calc_average();
-english.weekly_hours();
