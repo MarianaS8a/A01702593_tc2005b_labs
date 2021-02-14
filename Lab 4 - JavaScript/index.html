@@ -15,44 +15,74 @@
     </header>
     <script src = "js/fundamentos.js"></script>
     <script id = "casos_prueba">
-        //Casos de prueba
+        document.write("<h2> Resultados casos de prueba </h2>")
         //Pregunta 3: contador
+        document.write("<h4>Número de ceros, números positivos y números negativos</h4>");
         console.assert(counter([2,2,0,-1,-2,-3,-5])[0] == 1 && 
                       counter([2,2,0,-1,-2,-3,-5])[1] == 2 && 
                       counter([2,2,0,-1,-2,-3,-5])[2] == 4);
+        document.write("<h4>[2,2,0,-1,-2,-3,-5] = " + counter([2,2,0,-1,-2,-3,-5]) + "<h/4>");
+
         console.assert(counter([4,0,0])[0] == 2 && 
                       counter([4,0,0])[1] == 1 && 
                       counter([4,0,0])[2] == 0);
+        document.write("<h4>[4,0,0] = " + counter([4,0,0]) + "<h/4>");
+
         console.assert(counter([])[0] == 0 && 
                       counter([])[1] == 0 && 
                       counter([])[2] == 0);
+        document.write("<h4>[] = " + counter([]) + "<h/4>");
+
         console.assert(counter([-1,10,0,367,-19,0])[0] == 2 && 
                       counter([-1,10,0,367,-19,0])[1] == 2 && 
                       counter([-1,10,0,367,-19,0])[2] == 2);
+        document.write("<h4>[-1,10,0,367,-19,0] = " + counter([-1,10,0,367,-19,0]) + "<h/4>");
+    
         console.assert(counter([2,4,6,-1111])[0] == 0 && 
                       counter([2,4,6,-1111])[1] == 3 && 
                       counter([2,4,6,-1111])[2] == 1);
+        document.write("<h4>[2,4,6,-1111] = " + counter([2,4,6,-1111]) + "<h/4>");
 
         //Pregunta 4: promedios
+        document.write("<h4> Promedios <h4>")
         console.assert(average([[0,4,7,1], [2,5,3], [9]])[0] == 3 && 
                       average([[0,4,7,1], [2,5,3], [9]])[1] == 3.3333333333333335 && 
                       average([[0,4,7,1], [2,5,3], [9]])[2] == 9);
+        document.write("<h4>[[0,4,7,1], [2,5,3], [9]] = " + average([[0,4,7,1], [2,5,3], [9]]) + "<h/4>");
+    
         console.assert(average([[2,4], [8, 7]])[0] == 3 && 
                       average([[2,4], [8, 7]])[1] == 7.5);
+        document.write("<h4>[[2,4], [8, 7]] = " + average([[2,4], [8, 7]]) + "<h/4>");
+
         console.assert(average([[4,3]])[0] == 3.5);
+        document.write("<h4>[[4,3]] = " + average([[4,3]]) + "<h/4>");
+
         console.assert(average([[8], [2], [7]])[0] == 8 && 
                       average([[8], [2], [7]])[1] == 2 && 
                       average([[8], [2], [7]])[2] == 7);
+        document.write("<h4>[[8], [2], [7]] = " + average([[8], [2], [7]]) + "<h/4>");
+
         console.assert(average([[8,4], [2,3], [7,8]])[0] == 6 && 
                       average([[8,4], [2,3], [7,8]])[1] == 2.5 && 
                       average([[8,4], [2,3], [7,8]])[2] == 7.5);
+        document.write("<h4>[[8,4], [2,3], [7,8]] = " + average([[8,4], [2,3], [7,8]]) + "<h/4>");
         
         //Pregunta 5: inverso
+        document.write("<h4>Invertir números</h4>");
         console.assert(reverse(431) == 134);
+        document.write("<h4>431 = " + reverse(431) + "<h/4>");
+
         console.assert(reverse(54) == 45);
+        document.write("<h4>54 = " + reverse(54) + "<h/4>");
+
         console.assert(reverse(0) == 0);
+        document.write("<h4>0 = " + reverse(0) + "<h/4>");
+
         console.assert(reverse(5) == 5);
+        document.write("<h4>5 = " + reverse(5) + "<h/4>");
+
         console.assert(reverse(274937) == 739472);
+        document.write("<h4>274937 = " + reverse(274937) + "<h/4>");
 
         //Pregunta 6: Solución a problema
         const math = new Courses("Mate", 2, 2, [86,67,100,100]);
