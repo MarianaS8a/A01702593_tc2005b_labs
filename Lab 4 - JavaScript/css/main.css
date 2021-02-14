@@ -15,3 +15,8 @@ table{
     margin: auto;
     color: darkgray;
 }
+
+main, main h4, footer{
+    text-align: left;
+    color: darkgray;
+}
