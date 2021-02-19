@@ -48,3 +48,17 @@ function selectionSort(arr)
 console.log(average([2,4]));
 print_string("Esto se escribirá en un archivo de texto.");
 console.log(selectionSort([3,4,8,1]));
+
+//Crea una pequeña aplicación web que al enviar una petición al servidor, devuelva una de las páginas que creaste anteriormente en tus laboratorios.
+const http = require('http');
+const fs = require('fs').promises;
+
+const server = http.createServer( (request, response) => {
+    fs.readFile("index.html")
+    .then(contents => {
+        response.end(contents);
+    })
+});
+
+
+server.listen(3000);
