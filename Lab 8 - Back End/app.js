@@ -51,13 +51,24 @@ console.log(selectionSort([3,4,8,1]));
 
 //Crea una pequeña aplicación web que al enviar una petición al servidor, devuelva una de las páginas que creaste anteriormente en tus laboratorios.
 const http = require('http');
-const fs = require('fs').promises;
 
 const server = http.createServer( (request, response) => {
-    fs.readFile("index.html")
-    .then(contents => {
-        response.end(contents);
-    })
+    response.setHeader('Content-Type', 'text/html');
+    response.write("<html>");
+    response.write("<meta charset='UTF-8'>");
+    response.write("<meta name='viewport' content='width=device-width, initial-scale=1.0'></meta>")
+    response.write("<head><title>Servidor node</title></head>");
+    response.write("<body><h2>Acerca de mi</h2>");
+    response.write("<h3> Hola, mi nombre es Mariana Soto Ochoa. Actualmente vivo en la ciudad de Queretaro y estudio Ingeniería en Tecnologías Computacionales.</h3>");
+    response.write("<h3> Mis hobbies favoritos son tocar el piano, cocinar y hacer ejercicio. Además, disfruto mucho de aprender cosas nuevas y pasar tiempo con mis seres queridos.</h3>");
+    response.write("<img src='https://www.musicnotes.com/images2/promos/store/900x520_piano-min.jpg' alt='Piano'></body>");
+    response.write("<br></br>");
+    response.write("<footer> <h2>Información de contacto</h2>");
+    response.write("<h4> Matrícula: A01702593</h4>");
+    response.write("<h4>Correo electrónico: a01702593@itesm.mx</h4>");
+    response.write("<h4>Editor: Visual Studio Code</h4> </footer>");
+    response.write("</html>");
+    response.end();
 });
 
 
