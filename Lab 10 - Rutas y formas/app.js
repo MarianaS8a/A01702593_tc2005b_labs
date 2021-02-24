@@ -1,3 +1,5 @@
+//Authors: Jorge Alan Ramírez Elíaz, Mariana Soto Ochoa
+
 const http = require('http');
 
 const ropa = ["Jeans", "Blusa", "Sudadera", "Gorra"];
@@ -14,7 +16,6 @@ const server = http.createServer((request, response) =>{
         });
 
         response.write("</ul");
-        //response.write('<form action= "add-product" method= "GET"><input type="submit" name="Add product"></form>');
         response.write("</html>");
         response.end();
     }
@@ -49,10 +50,17 @@ const server = http.createServer((request, response) =>{
         response.write("<h1>Acerca de nostros</h1>");
         response.write("<body><h3>RECON se fundó en 1960 y este año celebra su 81 aniversario desde que comenzamos siendo una pequeña empresa local queretana.</h3></body>");
     }
-/*
-    else{
 
-    }*/
+    else{
+        response.statusCode = 404;
+       response.setHeader('Content-Type', 'text/html');
+       response.write("<html>");
+       response.write('<head><meta charset="UTF-8"><title>Page not found</title></head>');
+       response.write("<body><h1>Error 404</h1></body>");
+       response.write("</html>");
+       response.end();
+    }
+
     response.end();
 });
 
