@@ -1,4 +1,4 @@
-//Authors: Jorge Alan Ramírez Elíaz, Mariana Soto Ochoa
+//Authors: Jorge Alan Ramírez Elías, Mariana Soto Ochoa
 
 const http = require('http');
 
