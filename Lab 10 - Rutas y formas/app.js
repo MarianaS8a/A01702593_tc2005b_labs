@@ -1,8 +1,13 @@
 //Authors: Jorge Alan Ramírez Elías, Mariana Soto Ochoa
-
+const filesystem = require('fs');
 const http = require('http');
 
 const ropa = ["Jeans", "Blusa", "Sudadera", "Gorra"];
+ropa.forEach(element => {
+    filesystem.appendFileSync('productos.txt', element+",");
+});
+// filesystem.writeFileSync('productos.txt', ropa);
+
 const server = http.createServer((request, response) =>{
     if (request.url === "/inicio"){
         response.setHeader('Content-Type', 'text/html');
@@ -39,6 +44,7 @@ const server = http.createServer((request, response) =>{
         let strdatos = Buffer.concat(datos).toString();
         let producto = strdatos.split('=')[1];
         ropa.push(producto);
+        filesystem.appendFileSync('productos.txt', producto+",")
         })
         response.writeHead(301,{Location:'/inicio'});
     }
