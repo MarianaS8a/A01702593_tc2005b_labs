@@ -1,3 +1,4 @@
+//Authors: Jorge Alan Ramírez Elías, Mariana Soto Ochoa
 
 const express = require('express');
 const app = express();
@@ -14,6 +15,10 @@ app.use('/Jorge', Jorge);
 
 const tienda = require('./routes/tienda');
 app.use('/tienda', tienda);
+
+app.use("/pregunta",(request, response, next) => {
+    response.render('pregunta');
+});
 
 app.use("/",(request, response, next) => {   
     response.status(404).send('<html><head><meta charset="UTF-8"><title>Page not found</title></head><body><h1>Error 404</h1></body></html>')

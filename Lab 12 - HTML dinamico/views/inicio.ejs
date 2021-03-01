@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <title>Servidor node</title>
+    </head>
+    <body>
+        <header>
+            <h1>Bienvenido a la tienda RECON</h1>
+        </header>
+        <h3>Artículos disponibles:</h3>
+        
+        <ul>
+        <% ropa.forEach(element => { %>
+            <li> <%= element%> </li>
+        <% }); %>
+        </ul>
+
+        <%- include('includes/base.ejs'); %>
+    
+    </body>
+</html>
