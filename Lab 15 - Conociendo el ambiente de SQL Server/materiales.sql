@@ -17,7 +17,7 @@ BULK INSERT a1702593.a1702593.[Proveedores]
       )
 
 BULK INSERT a1702593.a1702593.[Proyectos]
-   FROM 'e:\wwwroot\rcortese\proyectos.csv'
+   FROM 'e:\wwwroot\a1702593\proyectos.csv'
    WITH
       (
          CODEPAGE = 'ACP',
@@ -28,7 +28,7 @@ BULK INSERT a1702593.a1702593.[Proyectos]
 SET DATEFORMAT dmy
 
 BULK INSERT a1702593.a1702593.[Entregan]
-   FROM 'e:\wwwroot\rcortese\entregan.csv'
+   FROM 'e:\wwwroot\a1702593\entregan.csv'
    WITH
       (
          CODEPAGE = 'ACP',
@@ -36,4 +36,4 @@ BULK INSERT a1702593.a1702593.[Entregan]
          ROWTERMINATOR = '\n'
       )
 
-SELECT * FROM Entregan
+SELECT * FROM Proyectos

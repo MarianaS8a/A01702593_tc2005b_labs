@@ -39,7 +39,7 @@ CREATE TABLE Entregan
 )
 
 BULK INSERT a1702593.a1702593.[Materiales]
-  FROM 'e:\wwroot\rcortese\materiales.csv'
+  FROM 'e:\wwwroot\rcortese\materiales.csv'
   WITH
   (
     CODEPAGE = 'ACP',
@@ -48,30 +48,62 @@ BULK INSERT a1702593.a1702593.[Materiales]
   )
 
 BULK INSERT a1702593.a1702593.[Proyectos]
-  FROM 'e:\wwroot\rcortese\proyectos.csv'
+  FROM 'e:\wwwroot\rcortese\proyectos.csv'
   WITH
   (
     CODEPAGE = 'ACP',
     FIELDTERMINATOR = ',',
-    ROWTERMINATOR = ' '
+    ROWTERMINATOR = '\n'
   )
 
 BULK INSERT a1702593.a1702593.[Proveedores]
-  FROM 'e:\wwroot\rcortese\proveedores.csv'
+  FROM 'e:\wwwroot\rcortese\proveedores.csv'
   WITH
   (
     CODEPAGE = 'ACP',
     FIELDTERMINATOR = ',',
-    ROWTERMINATOR = ' '
+    ROWTERMINATOR = '\n'
   )
 
 SET DATEFORMAT dmy -- especificar formato de la fecha
 
 BULK INSERT a1702593.a1702593.[Entregan]
-  FROM 'e:\wwroot\rcortese\entregan.csv'
+  FROM 'e:\wwwroot\rcortese\entregan.csv'
   WITH
   (
     CODEPAGE = 'ACP',
     FIELDTERMINATOR = ',',
-    ROWTERMINATOR = ' '
+    ROWTERMINATOR = '\n'
   )
+
+INSERT INTO Materiales values(1000, 'xxx', 1000)
+
+SELECT * FROM Entregan
+
+Delete from Materiales where Clave = 1000 and Costo = 1000
+
+ALTER TABLE Materiales add constraint llaveMateriales PRIMARY KEY (Clave)
+ALTER TABLE Proveedores add constraint llaveProveedores PRIMARY KEY (RFC)
+ALTER TABLE Proyectos add constraint llaveProyectos PRIMARY KEY (Numero)
+ALTER TABLE Entregan add constraint llaveEntregan PRIMARY KEY (Clave,RFC,Numero,Fecha)
+
+sp_helpconstraint Entregan
+
+INSERT INTO entregan values (0, 'xxx', 0, '1-jan-02', 0)
+
+Delete from Entregan where Clave = 0
+
+ALTER TABLE entregan add constraint cfentreganclave
+foreign key (clave) references materiales(clave);
+ALTER TABLE entregan add constraint cfentreganRFC
+foreign key (RFC) references proveedores(RFC);
+ALTER TABLE entregan add constraint cfentreganclave
+foreign key (Numero) references Proyectos(clave);
+
+sp_helpconstraint Entregan
+
+INSERT INTO entregan values (1000, 'AAAA800101', 5000, GETDATE(), 0);
+
+Delete from Entregan where Cantidad = 0
+
+ALTER TABLE entregan add constraint cantidad check (cantidad > 0) ;
