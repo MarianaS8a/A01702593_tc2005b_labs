@@ -1,0 +1,21 @@
+-¿Que muestra la instrucción sp_help materiales?
+	Muestra los tipos de dato de cada campo, información del propietario y otras características de tabla materiales.
+
+Ejecuta las instrucciones que contiene el archivo crear.sql
+-¿Qué efecto tuvo esta acción?
+	Creó las tablas Materiales, Proveedores, Proyectos y Entregan
+
+-¿Qué utilidad tiene esta manera de ejecutar los comandos de SQL?
+	Se pueden guardar las consultas para utilizar el código después en caso de ser necesario y de esta manera se escriben menos comandos.
+
+Abre una sesión de FTP y sube los siguientes archivos a tu directorio inicial.
+¿Qué relación tienen con las tablas de la base de datos? (checa su contenido)
+	Los archivos contienen los datos de las tablas separados por comas, siendo cada coma una división entre columnas y cada salto de línea una división entre filas.
+
+¿Qué relación tiene el contenido de este archivo (materiales.sql) con el formato en que se encuentran los datos en el archivo materiales.csv?
+	El archivo materiales.sql define que el archivo materiales.csv contiene los datos de la tabla separados por comas y saltos de línea.
+
+Ejecuta los comandos definidos en el archivo materiales.sql.
+Después de la ejecución del comando, vuelve a revisar el contenido de la tabla materiales mediante el uso de una consulta.
+¿Qué sucedió después de escribir SELECT  * FROM Materiales?
+	Los datos del archivo csv se encuentran en la parte inferior de la aplicación, junto con el nombre de cada campo.
