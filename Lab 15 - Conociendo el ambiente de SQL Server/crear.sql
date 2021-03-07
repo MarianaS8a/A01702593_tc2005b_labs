@@ -26,6 +26,6 @@ CREATE TABLE Entregan
 	Cantidad NUMERIC (8,2)
 )
 
---DROP TABLE Entregan, Materiales, Proveedores, Proyectos
+DROP TABLE Entregan, Materiales, Proveedores, Proyectos
 
---select * from sysobjects where xtype='U'
+select * from sysobjects where xtype='U'

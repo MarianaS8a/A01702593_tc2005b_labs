@@ -1,0 +1,52 @@
+Revisa el contenido de la tabla materiales y determina si existe alguna inconsistencia en el contenido de la tabla. ¿Cuál es? ¿A qué se debe?
+	- La tabla ya contenía una clave con el valor de 1000 y aún así aceptó el nuevo registro. Esto se debe a que aún no definimos una llave primaria.
+
+Agrega nuevamente el registro a la tabla de materiales:
+¿Qué ocurrió?
+	-Después de agregar la llave primaria, el software ya no me permite insertar claves repetidas y muestra un error diciendo que estoy violando un constraint.
+
+¿Qué información muestra esta consulta sp_helpconstraint materiales?
+	-Muestra el nombre de la tabla, el tipo de constraint, el nombre del constraint y la clave del constraint
+
+¿Qué sentencias utilizaste para definir las llaves primarias?
+	ALTER TABLE Materiales add constraint llaveMateriales PRIMARY KEY (Clave)
+  	ALTER TABLE Proveedores add constraint llaveProveedores PRIMARY KEY (RFC)
+  	ALTER TABLE Proyectos add constraint llaveProyectos PRIMARY KEY (Numero)
+  	ALTER TABLE Entregan add constraint llaveEntregan PRIMARY KEY (Clave,RFC,Numero,Fecha)
+
+¿Qué particularidad observas en los valores para clave, rfc y numero?
+	-El sistema permite la insersión de claves foráneas en la tabla Entregan cuando todavía no se insertan en la tabla de las que son llaves primarias
+
+¿Cómo responde el sistema a la inserción de este registro?
+	-Permite la inserción sin mostrar algún error
+
+¿Qué significa el mensaje que emite el sistema?
+	- Que no se pueden insertar esos valores porque hay un conflicto entre la inserción y la tabla Materiales
+
+¿Qué significado tiene la sentencia anterior?
+	- La llave foránea ya fue definida y solo se puede añadir un nuevo valor de Clave directamente desde la tabla Materiales
+
+¿Qué significan las columnas de esas consultas?
+	-Constraint_type: tipo de restricción
+	-Constraint_name: nombre dado a la restricción
+	-Constraint_keys: llaves que participan en la restricción
+
+¿Qué uso se le está dando a GETDATE()?
+	-Toma la fecha y hora de la inserción
+
+¿Tiene sentido el valor del campo de cantidad?
+	-No porque el valor del campo es nulo y es poco lógico que haya una entrega vacía
+
+¿Cómo responde el sistema?
+	-Muestra un mensaje diciendo que la inserción no se logró por un conflicto con el constraint cantidad
+
+¿Qué significa el mensaje?
+	-Cantidad no puede tener un valor igual a cero
+
+Integridad referencial
+	-La integridad referencial se refiere a la utilización de datos de manera uniforme. Para permitir la integridad referencial se
+	 emplean restricciones que no acepten datos duplicados, inválidos o poco pertinentes.
+
+Referencias:
+(2021). ¿En qué consiste la integridad de los datos y por qué es importante?. 06/03/2021, de Talend Sitio web:
+ ¿En qué consiste la integridad de los datos y por qué es importante?
