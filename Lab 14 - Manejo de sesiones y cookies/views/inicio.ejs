@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Servidor node</title>
+    </head>
+    <body>
+        <header>
+            <h1>Bienvenido a la tienda RECON</h1>
+        </header>
+        <h3>Artículos disponibles:</h3>
+        
+        <ul>
+        <% ropa.forEach(element => { %>
+            <li> <%= element%> </li>
+        <% }); %>
+        </ul>
+
+        
+        <p>Rutas de la página web:</p>
+        <ul>
+            <li>users/login</li>
+            <li>users/logout</li>
+            <li>tienda/inicio</li>
+            <li>tienda/add-product</li>
+            <li>Jorge/biografia</li>
+            <li>Jorge/favorite-players</li>
+            <li>Mariana/biografia</li>
+            <li>pregunta</li>
+        </ul>
+
+        <% if(isLoggedIn){%>
+            <h4>You are logged in</h4>
+        <%}%>
+
+        <%- include('includes/base.ejs'); %>
+    
+    </body>
+</html>

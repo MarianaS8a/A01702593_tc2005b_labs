@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 3</title>
+    <link type="text/css" rel="stylesheet" href="css/main.css"  media="screen,projection"/>
+</head>
+
+<body>
+    <header>
+      <h1>Laboratorio CSS</h1>
+    </header>
+    <main>
+      <h2 class = "titulo">Acerca de mí</h2>
+      <h3>Hola, mi nombre es Mariana Soto Ochoa. Actualmente vivo en la ciudad de Querétaro y estudio Ingeniería en Tecnologías 
+        Computacionales.</h3>
+      <h3> Mis hobbies favoritos son tocar el piano, cocinar y hacer ejercicio. Además, disfruto mucho de aprender
+          cosas nuevas y pasar tiempo con mis seres queridos.</h3>
+      <img src="https://posterstore.eu/images/zoom/6-19934.jpg" alt="Piano">
+      <br>
+
+      <h2>Preguntas a responder</h2>
+      <h3>Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS? </h3>
+      <p>Se debe de recurrir muy pocas veces al uso de !important porque hace caso omiso a la prioridad que cada sector tiene.
+        Por lo tanto, cuando una persona nueva intente retomar el código o nosotros mismos intentemos editar la página,
+        !important puede crear confusión.
+      </p>
+      <h3>Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?</h3>
+      <p>Se debe de seleccionar una imagen que sea de buena calidad para no dañar la credibilidad de la página. Además, es importante
+        elegir cuidadosamente que sea un diseño amigable y ligero que no agote la vista del usuario.
+      </p>
+      <h3>Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?</h3>
+      <p>Es recomendable trabajar con las unidades en proporcion (%) para que la página se ajuste al dispositivo del usuario.</p>
+      <h3>¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</h3>
+      <p>El uso de una versión minimizada elimina los espacios en blanco del archivo CSS, por lo que el peso del archivo se ve reducido
+        y la velocidad para cargarlo en la Web aumenta.
+      </p>
+      <br>
+    </main>
+    
+    <%- include('includes/base.ejs'); %>
+
+</body>
+
+</html>

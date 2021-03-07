@@ -1,0 +1,51 @@
+
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+
+body {
+    margin: 0 auto;
+    max-width: 50em;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    line-height: 1.5;
+    padding: 4em 1em;
+    color: #6495ed;
+}
+
+h1{
+  color: #04338a;
+}
+
+h2 {
+    color: #2c63c9;
+    margin-top: 1em;
+    padding-top: 1em;
+}
+
+p, ul, ol ,dl {
+  color: gray;
+}
+
+a {
+  color:#5be61b;
+}
+
+.fondo_azul{
+  background-color:#64afed4d;
+}
+
+#titulo {
+  text-decoration: underline;
+}
+
+#mi-nombre{
+  color: rgb(0, 174, 255);
+}
+
+#round-image{
+  border-radius: 50%;
+  margin-top: px;
+}
+
+a:hover{
+ color: #c4d812;
+ background-color:#64afed4d;
+}
