@@ -28,4 +28,6 @@ CREATE TABLE Entregan
 
 DROP TABLE Entregan, Materiales, Proveedores, Proyectos
 
+
+
 select * from sysobjects where xtype='U'
