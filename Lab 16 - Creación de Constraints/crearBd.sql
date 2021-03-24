@@ -1,7 +1,6 @@
-DROP TABLE Entregan, Materiales, Proveedores, Proyectos
 
 IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Materiales')
-
+DROP TABLE Materiales
 
 CREATE TABLE Materiales
 (
@@ -10,8 +9,8 @@ CREATE TABLE Materiales
   Costo numeric (8,2)
 )
 
-
 IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Proveedores')
+DROP TABLE Proveedores
 
 CREATE TABLE Proveedores
 (
@@ -20,6 +19,7 @@ CREATE TABLE Proveedores
 )
 
 IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Proyectos')
+DROP TABLE Proyectos
 
 CREATE TABLE Proyectos
 (
@@ -28,6 +28,7 @@ CREATE TABLE Proyectos
 )
 
 IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Entregan')
+DROP TABLE llaveEntregan
 
 CREATE TABLE Entregan
 (
@@ -76,34 +77,34 @@ BULK INSERT a1702593.a1702593.[Entregan]
     ROWTERMINATOR = '\n'
   )
 
-INSERT INTO Materiales values(1000, 'xxx', 1000)
+--INSERT INTO Materiales values(1000, 'xxx', 1000)
 
-SELECT * FROM Entregan
+--SELECT * FROM Entregan
 
-Delete from Materiales where Clave = 1000 and Costo = 1000
+--Delete from Materiales where Clave = 1000 and Costo = 1000
 
 ALTER TABLE Materiales add constraint llaveMateriales PRIMARY KEY (Clave)
 ALTER TABLE Proveedores add constraint llaveProveedores PRIMARY KEY (RFC)
 ALTER TABLE Proyectos add constraint llaveProyectos PRIMARY KEY (Numero)
 ALTER TABLE Entregan add constraint llaveEntregan PRIMARY KEY (Clave,RFC,Numero,Fecha)
 
-sp_helpconstraint Entregan
+--sp_helpconstraint Entregan
 
-INSERT INTO entregan values (0, 'xxx', 0, '1-jan-02', 0)
+--INSERT INTO entregan values (0, 'xxx', 0, '1-jan-02', 0)
 
-Delete from Entregan where Clave = 0
+--Delete from Entregan where Clave = 0
 
 ALTER TABLE entregan add constraint cfentreganclave
 foreign key (clave) references materiales(clave);
 ALTER TABLE entregan add constraint cfentreganRFC
 foreign key (RFC) references proveedores(RFC);
-ALTER TABLE entregan add constraint cfentreganclave
-foreign key (Numero) references Proyectos(clave);
+ALTER TABLE entregan add constraint cfentreganNumero
+foreign key (Numero) references Proyectos(Numero);
 
-sp_helpconstraint Entregan
+--sp_helpconstraint Entregan
 
-INSERT INTO entregan values (1000, 'AAAA800101', 5000, GETDATE(), 0);
+--INSERT INTO entregan values (1000, 'AAAA800101', 5000, GETDATE(), 0);
 
-Delete from Entregan where Cantidad = 0
+--Delete from Entregan where Cantidad = 0
 
-ALTER TABLE entregan add constraint cantidad check (cantidad > 0) ;
+--ALTER TABLE Entregan add constraint cantidad check (cantidad > 0) ;
